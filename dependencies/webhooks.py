@@ -93,8 +93,8 @@ def info_table():
     embed.add_field(
         name = "Functions -", 
         value = 
-            "```" + "Ssense Information" + "```" + 
-            "```" + "Vuja De Information" + "```" + 
+            "```" + "SSENSE Information" + "```" + 
+            "```" + "VUJA DÉ Information" + "```" + 
             "```" + "AIO Shopify Information" + "```" + 
             "```" + "New Balance Information" + "```", 
         inline=True

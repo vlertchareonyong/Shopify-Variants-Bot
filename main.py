@@ -22,9 +22,7 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if message.content.startstwith('.help'):
-        await message.channel.send(embed=info_table())
-    elif message.content.startswith('.shopify '):
+    if message.content.startswith('.shopify '):
         command_logs("Shopify", message)
         await message.channel.send(embed=shopify(message))
     elif message.content.startswith('.new balance '):
@@ -36,6 +34,8 @@ async def on_message(message):
     elif message.content.startswith('.vuja de '):
         command_logs("VUJA DÉ", message)
         await message.channel.send(embed=vuja_de(message))
+    elif message.content.startswith('.shopify'):
+        await message.channel.send(embed=info_table())
 
 @client.event
 async def on_reaction_add(reaction, user):
