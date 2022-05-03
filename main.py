@@ -22,7 +22,9 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if message.content.startswith('.shopify '):
+    if message.content.startstwith('.help'):
+        await message.channel.send(embed=info_table())
+    elif message.content.startswith('.shopify '):
         command_logs("Shopify", message)
         await message.channel.send(embed=shopify(message))
     elif message.content.startswith('.new balance '):

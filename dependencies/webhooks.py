@@ -176,7 +176,7 @@ def command_logs(command_name, message):
             inline = True
         )
         embed.set_footer(
-            text = f"Developed by clancy#0001 • {command_name}", 
+            text = f"Developed by clancy#0001 • {command_name} Variants Command", 
             icon_url = icon_url
         )
         webhook.add_embed(embed)
