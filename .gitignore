@@ -1,0 +1,4 @@
+*.pyc
+*toml
+*lock
+*replit
