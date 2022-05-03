@@ -1,2 +1,8 @@
 # Shopify-Variants-Bot
-A Discord Bot Which Provides Variants For Shopify, New Balance, SSENSE, and VUJA DÉ
+A Discord Bot That Provides Website Variants & Stock Numbers
+
+#### Supported Sites
+- Shopify
+- SSENSE
+- VUJA DÉ
+- New Balance
