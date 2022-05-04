@@ -28,7 +28,7 @@ def new_balance_parser(response, variant_base):
             variants_list.append(product['id']) 
             try:
                 products_json["variants"][product['id']]["isLowInventory"]
-            except KeyError:
+            except:
                 status_list.append(products_json["variants"][product['id']]["status"])
             else:
                 status_list.append("🟡 LOW STOCK")
