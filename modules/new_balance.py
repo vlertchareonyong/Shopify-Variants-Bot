@@ -35,7 +35,7 @@ def new_balance(message):
         product_price = str(response.html.search('"master": "{}};')).split("'")[1].split('"')[0].replace("min", "").replace("max", " - ")
         if "&dwvar" in product_link:
             variant_base = product_link.split("&dwvar")[-2].split("=")[-1]
-            product_image = f"https://nb.scene7.com/is/image/NB/{variant_base}_nb_02_i?$pdpflexf2$&amp;wid=464&amp"
+            product_image = f"https://nb.scene7.com/is/image/NB/{variant_base.lower()}_nb_02_i?$pdpflexf2$&amp;wid=464&amp"
             variants_list, stock_list = new_balance_parser(response, variant_base)
             if len(variants_list) <= 1024 and len(variants_list) != 0:
                 return construct(
