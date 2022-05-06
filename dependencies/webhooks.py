@@ -165,6 +165,9 @@ def command_logs(command_name, message):
             description = f"<@{message.author.id}> Used The {command_name} Variants Command In {message.guild.name}", 
             color='738adb'
         )
+        embed.set_thumbnail(
+            url = f"{message.author.avatar_url}"
+        )
         embed.add_embed_field(
             name = "Timestamp -", 
             value = f"<t:{timestamp}:R> ", 
