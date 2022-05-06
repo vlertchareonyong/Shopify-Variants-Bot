@@ -166,7 +166,7 @@ def command_logs(command_name, message):
             color='738adb'
         )
         embed.set_thumbnail(
-            url = f"{message.author.avatar_url}"
+            url = f"{message.guild.icon_url}"
         )
         embed.add_embed_field(
             name = "Timestamp -", 
