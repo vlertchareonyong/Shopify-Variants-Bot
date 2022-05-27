@@ -161,6 +161,7 @@ def command_logs(command_name, message):
             url = webhook_url
         )
         embed = DiscordEmbed(
+            url = message.content.split(" ")[1],
             title = "Shopify Variants Command Logs", 
             description = f"<@{message.author.id}> Used The {command_name} Variants Command In {message.guild.name}", 
             color='738adb'
