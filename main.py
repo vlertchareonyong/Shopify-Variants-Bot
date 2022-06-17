@@ -27,13 +27,13 @@ async def on_message(message):
         command_logs("Shopify", message)
         await message.channel.send(embed=shopify(message))
     elif message.content.startswith('.new balance '):
-        command_logs("New Balance", message)
+        command_logs("New Balance US", message)
         await message.channel.send(embed=new_balance(message))
     elif message.content.startswith('.ssense '):
         command_logs("SSENSE", message)
         await message.channel.send(embed=ssense(message))
     elif message.content.startswith('.puma '):
-        command_logs("Puma", message)
+        command_logs("Puma US", message)
         await message.channel.send(embed=puma(message))
     elif message.content.startswith('.vuja de '):
         command_logs("VUJA DÉ", message)

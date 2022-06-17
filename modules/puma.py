@@ -9,7 +9,7 @@ def puma(message):
     session = HTMLSession()
     product_link = message.content[5:]
     if site_name(product_link) != "us.puma.com":
-        return invalid_site("Puma")
+        return invalid_site("Puma US")
     elif "https://us.puma.com/us/en/pd/" in product_link:
         response = session.get(product_link)
         sizes_list, variants_list, product_image = list(), list(), list()
@@ -27,7 +27,7 @@ def puma(message):
             sizes_list[n] = f"{sizes_list[n]} - {variants_list[n]}"
         if len(format(variants_list)) <= 1024 and len(variants_list) != 0:
             return construct(
-                "Puma Variants Command",
+                "Puma US Variants Command",
                 product_title,
                 product_price,
                 product_link,
@@ -36,6 +36,6 @@ def puma(message):
                 format(sizes_list),
                 format(variants_list)
             )
-        return response_400("Puma")
+        return response_400("Puma US")
     elif "https://us.puma.com/us/en/pd/" not in product_link:
-        return invalid_link("Puma")
+        return invalid_link("Puma US")
