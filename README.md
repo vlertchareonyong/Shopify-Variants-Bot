@@ -2,8 +2,8 @@
 A Discord Bot That Provides Product Variants & Stock Numbers
 
 #### Supported Sites
-- Puma US
 - Shopify
 - SSENSE
 - VUJA DÉ
+- Puma US
 - New Balance US
