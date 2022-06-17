@@ -30,8 +30,9 @@ def snipes(message):
         for string in str(response.html.text).split(",\\"):
             if '"page_id_variant\\":' in string:
                 variants_list.extend(re.findall(r'\d{11}', string))
+        sizes_list = sizes_list[2:]
         for n in range(len(sizes_list)):
-            sizes_list[n] = f"{sizes_list[n]} - {variants_list[n]}"
+            sizes_list[n] = f"{sizes_list[n]} - {sorted(variants_list[:-4])[n]}"
         return construct(
             "Snipes US Variants Command",
             product_title,
@@ -39,7 +40,7 @@ def snipes(message):
             product_link,
             time.time() - start,
             product_image,
-            None if len(format(sizes_list[2:])) < 10 else format(sizes_list[2:]),
+            None if len(format(sizes_list)) < 10 else format(sizes_list),
             format(sorted(variants_list[:-4]))
         )
     elif "html" not in product_link:
