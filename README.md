@@ -6,4 +6,5 @@ A Discord Bot That Provides Product Variants & Stock Numbers
 - SSENSE
 - VUJA DÉ
 - Puma US
+- Snipes US
 - New Balance US
