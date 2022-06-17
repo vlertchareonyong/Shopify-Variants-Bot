@@ -2,7 +2,10 @@ import time
 import requests
 from dependencies.webhooks import *
 from dependencies.functions import *
+from cachetools import cached, TTLCache
+cache = TTLCache(maxsize=100, ttl=86400)
 
+@cached(cache)
 def shopify(message):
     start = time.time()
     product_link = message.content[9:]

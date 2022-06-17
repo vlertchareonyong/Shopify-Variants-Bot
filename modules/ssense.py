@@ -4,7 +4,10 @@ import requests
 from bs4 import BeautifulSoup
 from dependencies.webhooks import *
 from requests_html import HTMLSession
+from cachetools import cached, TTLCache
+cache = TTLCache(maxsize=100, ttl=86400)
 
+@cached(cache)
 def ssense(message):
     start = time.time()
     product_link = message.content[8:]

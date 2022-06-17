@@ -3,7 +3,10 @@ import time
 from dependencies.webhooks import *
 from dependencies.functions import *
 from requests_html import HTMLSession
+from cachetools import cached, TTLCache
+cache = TTLCache(maxsize=100, ttl=86400)
 
+@cached(cache)
 def new_balance(message):
     start = time.time()
     session = HTMLSession()

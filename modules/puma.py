@@ -3,7 +3,10 @@ import time
 from dependencies.webhooks import *
 from dependencies.functions import *
 from requests_html import HTMLSession
+from cachetools import cached, TTLCache
+cache = TTLCache(maxsize=100, ttl=86400)
 
+@cached(cache)
 def puma(message):
     start = time.time()
     session = HTMLSession()
@@ -21,8 +24,8 @@ def puma(message):
                 sizes_list.extend(re.findall(r'\d+[.]?\d?', string))
             elif "salePrice\\" in string:
                 product_price = re.findall(r'\d+', string)[0]
-            elif "https://images.puma.com/image/upload" in string and "preview" in string:
-                product_image = string[13:-1]
+            #elif "https://images.puma.com/image/upload" in string and "preview" in string:
+                #product_image = string[13:-1]
         for n in range(len(sizes_list)):
             sizes_list[n] = f"{sizes_list[n]} - {variants_list[n]}"
         if len(format(variants_list)) <= 1024 and len(variants_list) != 0:
@@ -32,8 +35,8 @@ def puma(message):
                 product_price,
                 product_link,
                 time.time() - start,
-                product_image,
-                format(sizes_list),
+                "https://us.puma.com/",
+                None if len(format(sizes_list)) < 10 else format(sizes_list),
                 format(variants_list)
             )
         return response_400("Puma US")

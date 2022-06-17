@@ -86,6 +86,7 @@ def info_table():
         value = 
             "```" + ".puma [link]" + "```" + 
             "```" + ".ssense [link]" + "```" + 
+            "```" + ".snipes [link]" + "```" + 
             "```" + ".vuja de [link]" + "```" + 
             "```" + ".shopify [link]" + "```" + 
             "```" + ".new balance [link]" + "```", 
@@ -96,6 +97,7 @@ def info_table():
         value = 
             "```" + "Puma US Information" + "```" + 
             "```" + "SSENSE Information" + "```" + 
+            "```" + "Snipes US Information" + "```" + 
             "```" + "VUJA DÉ Information" + "```" + 
             "```" + "AIO Shopify Information" + "```" + 
             "```" + "New Balance US Information" + "```", 
