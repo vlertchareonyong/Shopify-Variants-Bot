@@ -11,8 +11,8 @@ def vuja_de(message):
     if site_name(product_link) != "vujade-studio.com":
         return invalid_site("VUJA DÉ")
     response = session.get(product_link)
-    product_title = str(response.html.search('<title>{}</title>')).replace("<Result ('", "").replace("',) {}>", "")
-    product_price = str(response.html.search('"decimalValue":"{}","fractionalDigits"')).replace("<Result ('", "").replace("',) {}>", "")
+    product_title = response.html.search('<title>{}</title>')[0]
+    product_price = response.html.search('"decimalValue":"{}","fractionalDigits"')[0]
     content_json = json.loads(str(response.html.search('"product":{}"showAnnouncementBar"')).replace("<Result ('", "").replace(",',) {}>", ""))
     sizes_list, variants_list, stock_list = list(), list(), list()
     for size in content_json['variants']:

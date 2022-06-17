@@ -1,6 +1,7 @@
 import os
 import asyncio
 import discord
+from modules.puma import *
 from modules.ssense import *
 from modules.vuja_de import *
 from modules.shopify import *
@@ -31,6 +32,9 @@ async def on_message(message):
     elif message.content.startswith('.ssense '):
         command_logs("SSENSE", message)
         await message.channel.send(embed=ssense(message))
+    elif message.content.startswith('.puma '):
+        command_logs("Puma", message)
+        await message.channel.send(embed=puma(message))
     elif message.content.startswith('.vuja de '):
         command_logs("VUJA DÉ", message)
         await message.channel.send(embed=vuja_de(message))

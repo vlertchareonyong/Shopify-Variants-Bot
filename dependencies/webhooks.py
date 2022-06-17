@@ -84,6 +84,7 @@ def info_table():
     embed.add_field(
         name = "Commands -", 
         value = 
+            "```" + ".puma [link]" + "```" + 
             "```" + ".ssense [link]" + "```" + 
             "```" + ".vuja de [link]" + "```" + 
             "```" + ".shopify [link]" + "```" + 
@@ -93,10 +94,11 @@ def info_table():
     embed.add_field(
         name = "Functions -", 
         value = 
+            "```" + "Puma US Information" + "```" + 
             "```" + "SSENSE Information" + "```" + 
             "```" + "VUJA DÉ Information" + "```" + 
             "```" + "AIO Shopify Information" + "```" + 
-            "```" + "New Balance Information" + "```", 
+            "```" + "New Balance US Information" + "```", 
         inline=True
     )
     embed.set_footer(
