@@ -1,13 +1,12 @@
 import re
 import time
 import random
+from functools import lru_cache
 from dependencies.webhooks import *
 from dependencies.functions import *
 from requests_html import HTMLSession
-from cachetools import cached, TTLCache
-cache = TTLCache(maxsize=100, ttl=86400)
 
-@cached(cache)
+@lru_cache
 def snipes(message):
     start = time.time()
     session = HTMLSession()

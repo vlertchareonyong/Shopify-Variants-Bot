@@ -2,12 +2,11 @@ import time
 import random
 import requests
 from bs4 import BeautifulSoup
+from functools import lru_cache
 from dependencies.webhooks import *
 from requests_html import HTMLSession
-from cachetools import cached, TTLCache
-cache = TTLCache(maxsize=100, ttl=86400)
 
-@cached(cache)
+@lru_cache
 def ssense(message):
     start = time.time()
     product_link = message.content[8:]

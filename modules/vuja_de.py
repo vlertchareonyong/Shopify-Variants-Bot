@@ -1,12 +1,11 @@
 import time
 import json
 import requests
+from functools import lru_cache
 from dependencies.webhooks import *
 from requests_html import HTMLSession
-from cachetools import cached, TTLCache
-cache = TTLCache(maxsize=100, ttl=86400)
 
-@cached(cache)
+@lru_cache
 def vuja_de(message):
     start = time.time()
     session = HTMLSession()
